@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #333 !important;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    flex: 1;
+}
+
+
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.beige {
+    color: #FFE4B5 !important;
+}
+
+#move {
+    position: relative;
+    z-index: 9999;
+}
+
+.button {
+    margin-right: 5rem !important;
+    margin-bottom: 3rem !important;
+    background-color: #FFE4B5 !important;
+    border-color: #FFE4B5 !important;
+    color: #303030 !important;
+}
+
+.button-nein {
+    color: #fff !important;
+    background-color: red !important;
+    border-color: red !important;
+}
+
+.boxing {
+    text-align: center;
+    padding: 5rem 80px;
+    background-color: #333;
+    color: #FFE4B5;
+}
+
+/* Mobile Padding */
+@media screen and (max-width:600px) {
+    .boxing {
+        padding: 5rem 40px;
+    }
+}
+
+/** Meets Part */
+
+.meets-photo {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)),
+        url(img/v-day.png);
+    min-height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    .meets-photo {
+        background-attachment: scroll !important;
+        background-position: center top !important;
+        min-height: 350px !important;
+    }
+}
+
+.next-meet-text {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 20%;
+    width: 100%;
+    font-size: 24px;
+}
+
+.meet-timer {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 35%;
+    width: 100%;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.meet-timer div {
+    flex-basis: 10rem;
+}
+
+.meet-timer div p {
+    font-size: 60px;
+}
+
+@media screen and (max-width:600px) {
+    .meet-timer {
+        padding-top: 5rem;
+        letter-spacing: 0 !important;
+    }
+
+    .meet-timer div p {
+        font-size: 45px !important;
+    }
+
+    .meet-timer span {
+        font-size: 20px !important;
+    }
+}
+
+
+
+/** Footer Teil */
+
+.site-footer {
+    width: 100%;
+    background: #222;
+    color: #aaa;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.site-footer span {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.site-footer span:hover {
+    opacity: 1;
+    color: #FFE4B5;
+}
+
+.site-footer span {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/** Konfetti teil */
+
+#confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999999;
+}
+
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 24px;
+    animation: fall 2.5s linear forwards;
+    opacity: 0.9;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MOBILE FEINTUNING
+   ========================= */
+@media (max-width: 600px) {
+
+  .boxing {
+    padding: 2.25rem 1.25rem;   /* statt 5rem 40px */
+  }
+
+  .text h2 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .text p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Buttons: schöner & kompakter + untereinander */
+  .text .btn {
+    display: inline-block;
+    margin: 0.4rem 0.35rem !important;
+    padding: 0.6rem 1rem;
+    min-width: 120px;
+  }
+
+  /* Abstand zur Bild-Sektion */
+  .meets-photo {
+    min-height: 320px !important;  /* kleiner */
+    border-radius: 16px;           /* optional hübscher */
+    overflow: hidden;              /* damit Radius wirkt */
+    margin-top: 1.25rem;
+  }
+
+  /* Titel im Bild kleiner und besser platziert */
+  .next-meet-text {
+    top: 14%;
+    padding: 0 0.75rem;
+    text-align: center;
+  }
+
+  .next-meet-text h1 {
+    font-size: 1.55rem;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  /* Timer: 2x2 Grid statt 4 nebeneinander */
+  .meet-timer {
+    top: 44%;
+    width: 100%;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 1.2rem;
+    justify-items: center;
+    letter-spacing: 0 !important;
+  }
+
+  .meet-timer div {
+    flex-basis: auto; /* überschreibt dein flex-basis */
+    width: 100%;
+    max-width: 140px;
+  }
+
+  .meet-timer div p {
+    font-size: 2.4rem !important;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .meet-timer span {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Extra klein (z.B. iPhone SE) */
+@media (max-width: 380px) {
+  .text h2 { font-size: 1.7rem; }
+  .next-meet-text h1 { font-size: 1.35rem; }
+
+  .meet-timer div p { font-size: 2.15rem !important; }
+  .text .btn { min-width: 110px; }
+}
